@@ -1,0 +1,9 @@
+package com.qa.quickstart.initialTesting;
+
+public class Multiply {
+	
+	public Double multi(Double num1, Double num2) {
+		Double output = num1 * num2;
+		return output;
+	}
+}

@@ -1,0 +1,38 @@
+package com.qa.quickstart.Tax;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+
+
+@RunWith(Parameterized.class)
+
+public class TestTax {
+
+	@Parameters
+	public static List<Double[]> data(){
+			return Arrays.asList(new Double[][] {{1d,2d,3d},{3d,4d,7d},{5d,-2d,3d},{1d,0.5,1.5},{2d,0d,2d},{-3d,1.5,-1.5},{0d,0d,0d}});
+	}
+	
+	private double Input1;
+	private double Expected;
+	
+	public TestTax(double input1, double expected) {
+		Input1 = input1;
+		Expected = expected;
+	}
+	
+	@Test
+	public void test() {
+		Tax tax = new Tax();
+		
+		assertEquals(Expected, tax.calcNet(Input1), 0.01);
+		
+	}
+}

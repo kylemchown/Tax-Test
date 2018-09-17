@@ -1,0 +1,7 @@
+package com.qa.quickstart.Tax;
+
+import junit.framework.TestCase;
+
+public class TestTax extends TestCase {
+
+}

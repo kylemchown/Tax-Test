@@ -1,0 +1,32 @@
+package com.qa.quickstart.Tax;
+
+public class Tax {
+	
+	
+	public double calcTax(double salary) {
+		if (salary >0 && salary<15000) {
+			return 0;
+		}
+		else if (salary >= 15000 && salary<20000) {
+			return 0.1;
+		}
+		else if (salary >= 20000 && salary<30000) {
+			return 0.15;
+		}
+		else if (salary >= 30000 && salary<45000) {
+			return 0.2;
+		}
+		else if (salary >= 45000) {
+			return 0.25;
+		}
+		else {
+			return 1d;
+		}
+	}
+	
+	public double calcNet(double salary) {
+		double percent = calcTax(salary);
+		double output = salary - (salary*percent);
+		return output;
+	}
+}
